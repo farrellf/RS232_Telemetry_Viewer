@@ -1,0 +1,18 @@
+This code is released into the public domain.
+
+
+For details about this project, please see:
+http://www.farrellf.com/projects/software/2014-05-31_RS232_Telemetry_Viewer/
+
+
+The code is split into eight classes: Main, Database, TelemetryGUI, ConfigurationLoader, SerialConfigPanel, SerialPortListener, BallPanel and LineGraph. The TelemetryGUI class has two inner classes: TelemetryGroup and TelemetryItem.
+
+Main simply creates an instance of the Database and TelemetryGUI classes.
+
+Database is used to store the history of values for each data point.
+
+TelemetryGUI configures the main window and creates an instance of the ConfigurationLoader to read the configuration text file and make the corresponding panels. A BallPanel is used to visualize the robot's pitch and yaw angles. A SerialConfigPanel shows the available serial ports and baud rates, and allows the user to establish a connection with the selected port.
+
+SerialPortListener is used to spawn a new thread that monitors the RS232 link, interprets incoming text, and populates the database with new values.
+
+LineGraph is a window that shows the recent history of an item in the form of a constantly updating line graph.
